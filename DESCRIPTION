@@ -1,0 +1,29 @@
+Package: chamberBR
+Title: Retrieve Data from the Brazilian Chamber of Deputies
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Fernando",
+           family = "Meireles",
+           role = c("aut", "cre"),
+           email = "fmeireles@ufmg.br",
+           comment = c(ORCID = "0000-0002-7027-2058"))
+Description: Provides a set of functions to extract, clean, and tabulate legislative data from the Brazilian Chamber of Deputies's new API.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: 
+    dplyr,
+    rlang (>= 0.1.2),
+    readr,
+    janitor,
+    magrittr,
+    congressbr,
+    tidyr,
+    ggplot2,
+    stringr,
+    purrr,
+    lubridate
+Suggests: 
+    roxygen2
