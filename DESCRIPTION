@@ -24,6 +24,7 @@ Imports:
     ggplot2,
     stringr,
     purrr,
-    lubridate
+    lubridate,
+    httr
 Suggests: 
     roxygen2
