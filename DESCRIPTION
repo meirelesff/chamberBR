@@ -25,6 +25,7 @@ Imports:
     stringr,
     purrr,
     lubridate,
-    httr
+    httr,
+    jsonlite
 Suggests: 
     roxygen2

@@ -128,4 +128,33 @@ pega_autor <- function(anos, filtra_deputados = FALSE, proponente_principal = TR
 }
 
 
+#' Pega tramitacao
+#'
+#' @param id ID da proposicao
+#'
+#' @export
+
+pega_tramitacao <- function(id){
+
+  message("ID: ", id)
+  httr::modify_url("https://dadosabertos.camara.leg.br/", path = paste0("api/v2/proposicoes/", id, "/tramitacoes")) %>%
+    get_data(data_frame = FALSE)
+}
+
+
+#' Pega a tramitacao de mais de uma proposicao
+#'
+#' @param ids ID da proposicao
+#'
+#' @export
+
+pega_tramitacoes <- function(ids){
+
+  pega_tramitacao_safe <- purrr::possibly(pega_tramitacao, NULL)
+  ids %>%
+    purrr::map(pega_tramitacao_safe) %>%
+    dplyr::bind_rows()
+}
+
+
 

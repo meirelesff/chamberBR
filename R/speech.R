@@ -26,7 +26,7 @@ pega_discursos <- function(id_deputado, legis){
     purrr::map(as.data.frame) %>%
     purrr::map(dplyr::as_tibble) %>%
     dplyr::bind_rows() %>%
-    dplyr::mutate(id_deputado = .data$id_deputado)
+    dplyr::mutate(id_deputado = id_deputado)
 
   # Checa o numero de paginas
   pag <- httr::content(pag)
@@ -57,7 +57,7 @@ pega_discursos <- function(id_deputado, legis){
       purrr::map(as.data.frame) %>%
       purrr::map(dplyr::as_tibble) %>%
       dplyr::bind_rows() %>%
-      dplyr::mutate(id_deputado = .data$id_deputado)
+      dplyr::mutate(id_deputado = id_deputado)
 
     pag <- httr::content(pag)
   }
